@@ -44,7 +44,7 @@ function parseCSV(fileName) {
             var series = [];
             for(var i=1; i<results.data.length; i++) {
                 var name = results.data[i][0];
-                if(name == "Sydney") {
+                if(name == "Parramatta") {
                     var data = [];
                     for(var j=1; j<results.data[i].length; j+=2) {
                         var value = results.data[i][j];
