@@ -25,22 +25,46 @@ $("#buildings").on("change", function() {
 // Retrieves a CSV file and then parses it
 var csv = null;
 function parseCSV(location) {
-     console.log("Parse CSV from: " + location);
+    console.log("Parsing CSV from: " + location);
     
+    // Parse data
     Papa.parse(location, {
         download: true,
         complete: function(results) {
             csv = results;
             console.log("Remote file parsed!", results);
+            
+            // Determine categories
+            var categories = [];
+            for(var i=1; i < results.data.length; i++) {
+                categories.push(results.data[i][0]);
+            }
+            console.log("Categories:", categories);
+            
+            // Determine series
+            
+            
+            $('#building-chart').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'JJ\'s Herblore Statistics'
+                },
+                xAxis: {
+                    categories: ['runtime', 'xp', 'mixed', 'cleaned', 'decanted', 'grinded']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Amount'
+                    }
+                },
+                series: [{
+                    name: 'All Users',
+                    data: [21387693, 315849198, 7299551, 1587477, 464878, 917936]                    }]
+            });
+
         }
     });
-    /*
-    $.get(location, function(data) {
-        csv = $.parse(data);
-        console.log(csv);
-        
-    }, "text").fail(function() {
-        alert("Failed to retrieve CSV data from " + location); 
-    });
-    */
+
 }
