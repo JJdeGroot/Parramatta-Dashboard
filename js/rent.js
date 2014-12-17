@@ -34,31 +34,44 @@ function parseCSV(location) {
             csv = results;
             console.log("Remote file parsed!", results);
             
-            // Determine categories
-            var categories = _.chain(results.data).map(function(row) { return row[0]; } ).rest(1).value();
-            console.log("Categories:", categories);
+            // Determine cities
+            var cities = _.chain(results.data).map(function(row) { return row[0]; } ).rest(1).value();
+            console.log("Cities:", cities);
+            
+            // Determine years
+            
             
             // Determine series
-            
-            
+            var series = [];
+            for(var i=1; i<results.data.length; i++) {
+                var name = results.data[i][0];
+                if(name == "Parramatta") {
+                    var data = [];
+                    for(var j=1; j<results.data[i].length; j+=2) {
+                        var value = results.data[i][j];
+                        data.push(parseInt(value));
+                    }
+                    series.push({name: name, data: data});
+                }
+            }
+            console.log(series);
+
             $('#building-chart').highcharts({
                 chart: {
                     type: 'column'
                 },
                 title: {
-                    text: 'JJ\'s Herblore Statistics'
+                    text: 'NWS rent prices'
                 },
                 xAxis: {
-                    categories: ['runtime', 'xp', 'mixed', 'cleaned', 'decanted', 'grinded']
+                    categories: ['data']
                 },
                 yAxis: {
                     title: {
-                        text: 'Amount'
+                        text: 'Price ($/w)'
                     }
                 },
-                series: [{
-                    name: 'All Users',
-                    data: [21387693, 315849198, 7299551, 1587477, 464878, 917936]                    }]
+                series: series
             });
 
         }
