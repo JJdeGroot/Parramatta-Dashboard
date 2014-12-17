@@ -27,6 +27,14 @@ var csv = null;
 function parseCSV(location) {
      console.log("Parse CSV from: " + location);
     
+    Papa.parse(location, {
+        download: true,
+        complete: function(results) {
+            csv = results;
+            console.log("Remote file parsed!", results);
+        }
+    });
+    /*
     $.get(location, function(data) {
         csv = $.parse(data);
         console.log(csv);
@@ -34,5 +42,5 @@ function parseCSV(location) {
     }, "text").fail(function() {
         alert("Failed to retrieve CSV data from " + location); 
     });
-    
+    */
 }
