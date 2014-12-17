@@ -15,13 +15,14 @@ $.get(url, function(files) {
 
 // Listen to buildings dropdown
 $("#buildings").on("change", function() {
-    var file = $(this).val();
-    parseCSV(path + file);
+    var fileName = $(this).val();
+    parseCSV(fileName);
 });
 
 // Retrieves a CSV file and then parses it
 var csv = null;
-function parseCSV(location) {
+function parseCSV(fileName) {
+    var location = path + fileName;
     console.log("Parsing CSV from: " + location);
     
     // Parse data
@@ -31,38 +32,41 @@ function parseCSV(location) {
             csv = results;
             console.log("Remote file parsed!", results);
             
-            // Determine cities
-            var cities = _.chain(results.data).map(function(row) { return row[0]; } ).rest(1).value();
-            console.log("Cities:", cities);
-            
             // Determine columns
-            
+            var columns = [];
+            for(var i=1; i<results.data[0].length; i+=2) {
+                columns.push(results.data[0][i]);   
+            }
+            console.log("Columns:", columns);
             
             
             // Determine series
             var series = [];
             for(var i=1; i<results.data.length; i++) {
                 var name = results.data[i][0];
-                if(name == "Parramatta") {
+                if(name == "Sydney") {
                     var data = [];
                     for(var j=1; j<results.data[i].length; j+=2) {
                         var value = results.data[i][j];
-                        data.push(parseInt(value));
+                        if(value !== undefined && value.length > 0) {
+                            data.push(parseInt(value));
+                        }
                     }
                     series.push({name: name, data: data});
                 }
             }
-            console.log(series);
+            console.log("Series:", series);
 
+            // Generate chart
             $('#building-chart').highcharts({
                 chart: {
                     type: 'column'
                 },
                 title: {
-                    text: 'NWS rent prices'
+                    text: fileName
                 },
                 xAxis: {
-                    categories: ['data']
+                    categories: columns
                 },
                 yAxis: {
                     title: {
