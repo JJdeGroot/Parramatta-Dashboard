@@ -27,6 +27,9 @@ function parseCSV(location) {
         
         var lines = data.split(",");
         console.log("Lines: " + lines.length);
+        for(var i=0; i<lines.length && i<300; i++) {
+            console.log(lines[i]);
+        }
     }, "text").fail(function() {
         alert("Failed to retrieve CSV data from " + location); 
     });
