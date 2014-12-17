@@ -71,14 +71,21 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Parramatta Dashboard</h1>
           <div class="row placeholders">
-		      <select id="buildings">
-		        <option value="x" disabled="disabled">Select building type</option>
-		      </select>
+            <div class="col-xs-7 col-sm-7">
+	        	<iframe width="600" height="420" src="http://maps.stamen.com/watercolor/embed#12/-33.7811/150.9913"></iframe>
+            </div>
+            <div class="col-xs-5 col-sm-5">
+            	<div>To view rental data for Parramatta, select a building type: </div>
+            	<div style="">
+			      <select id="buildings" size="20">
+			        <option value="x" disabled="disabled">Select building type</option>
+			      </select>
+            	</div>
               
               <div id="building-chart"></div>
-              
-              
+            </div>
 	      </div>
+
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
@@ -101,6 +108,7 @@
               <span class="text-muted">Something else</span>
             </div>
           </div>
+
 
           <h2 class="sub-header">Wikipedia information</h2>
           <div class="table-responsive">
