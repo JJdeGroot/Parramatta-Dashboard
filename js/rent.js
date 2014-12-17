@@ -2,9 +2,6 @@ var path = "data/rent/";
 var url = "/api/files?q="+path;
 console.log("Rent files URL: " + url);
 
-$(document).ready(function() {
-
-});
 
 // Retrieve files
 $.get(url, function(files) {
@@ -39,7 +36,7 @@ function parseCSV(location) {
             console.log("Categories:", categories);
             
             // Determine series
-            
+         
             
             $('#building-chart').highcharts({
                 chart: {
