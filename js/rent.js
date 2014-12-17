@@ -2,9 +2,6 @@ var path = "data/rent/";
 var url = "/api/files?q="+path;
 console.log("Rent files URL: " + url);
 
-$(document).ready(function() {
-
-});
 
 // Retrieve files
 $.get(url, function(files) {
@@ -38,7 +35,8 @@ function parseCSV(location) {
             var cities = _.chain(results.data).map(function(row) { return row[0]; } ).rest(1).value();
             console.log("Cities:", cities);
             
-            // Determine years
+            // Determine columns
+            
             
             
             // Determine series
