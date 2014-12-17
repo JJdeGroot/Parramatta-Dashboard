@@ -1,0 +1,15 @@
+{
+  "name": "Parramatta-Dashboard",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JJdeGroot/Parramatta-Dashboard"
+  },
+  "version": "0.0.1",
+  "private": false,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "*"
+  }
+}
