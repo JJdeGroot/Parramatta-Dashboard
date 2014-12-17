@@ -2,6 +2,10 @@ var path = "data/rent/";
 var url = "/api/files?q="+path;
 console.log("Rent files URL: " + url);
 
+$(document).ready(function() {
+
+});
+
 // Retrieve files
 $.get(url, function(files) {
     // Append building types to dropdown
@@ -19,14 +23,14 @@ $("#buildings").on("change", function() {
 });
 
 // Retrieves a CSV file and then parses it
+var csv = null;
 function parseCSV(location) {
      console.log("Parse CSV from: " + location);
     
     $.get(location, function(data) {
-        console.log(data);
+        csv = $.parse(data);
+        console.log(csv);
         
-        var lines = data.split(",");
-        console.log("Lines: " + lines.length);
     }, "text").fail(function() {
         alert("Failed to retrieve CSV data from " + location); 
     });
