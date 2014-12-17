@@ -12,6 +12,6 @@ $(document).ready(function() {
 });
 
 var doNav = function(e, ui) {
-	_.values(components).forEach(function(c) { console.log(c); $(c).hide(); } )
-	$(components[e.currentTarget.id]).show();
+	//_.values(components).forEach(function(c) { console.log(c); $(c).hide(); } )
+	window.location.hash = $(components[e.currentTarget.id]);
 };

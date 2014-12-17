@@ -50,11 +50,11 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li id="nav-overview" class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li id="nav-rent"><a href="#">Rent</a></li>
-            <li id="nav-wiki-profile"><a href="#">Wikipedia (Profile)</a></li>
-            <li id="nav-wiki-raw"><a href="#">Wikipedia (Raw)</a></li>
-            <li id="nav-placeholders"><a href="#">Placeholders</a></li>
+            <li id="nav-overview" class="active"><a href="#content-overview">Overview <span class="sr-only">(current)</span></a></li>
+            <li id="nav-rent"><a href="#content-rent">Rent</a></li>
+            <li id="nav-wiki-profile"><a href="#content-profile">Wikipedia (Profile)</a></li>
+            <li id="nav-wiki-raw"><a href="#content-raw">Wikipedia (Raw)</a></li>
+            <li id="nav-placeholders"><a href="#content-placeholders">Placeholders</a></li>
           </ul>
           <!--
           <ul class="nav nav-sidebar">
@@ -72,15 +72,15 @@
           -->
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Parramatta Dashboard</h1>
-          <div id="content-overview" class="row placeholders">
-            <div class="col-xs-7 col-sm-7">
+          <h1 id="content-overview" class="page-header">Parramatta Dashboard</h1>
+          <div class="row placeholders">
+            <div class="col-xs-12 col-sm-12">
 	        	<iframe width="600" height="420" src="http://maps.stamen.com/watercolor/embed#12/-33.7811/150.9913"></iframe>
             </div>
 	      </div>
 
           <div id="content-rent" class="row placeholders">
-            <div class="col-xs-5 col-sm-5">
+            <div class="col-xs-12 col-sm-12">
             	<div>To view rental data for Parramatta, select a building type: </div>
             	<div style="">
 			      <select id="buildings" size="20">
@@ -92,28 +92,6 @@
             </div>
 	      </div>
 
-          <div id="content-placeholders" class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
 
           <div id="content-profile">
 	          <h2 class="sub-header">Wikipedia information</h2>
@@ -146,6 +124,32 @@
 	            </table>
 	          </div>
           </div>
+
+
+		 <div id="content-placeholders"/>
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
