@@ -30,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">This is Parramatta</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -50,11 +50,13 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
+            <li id="nav-overview" class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li id="nav-rent"><a href="#">Rent</a></li>
+            <li id="nav-wiki-profile"><a href="#">Wikipedia (Profile)</a></li>
+            <li id="nav-wiki-raw"><a href="#">Wikipedia (Raw)</a></li>
+            <li id="nav-placeholders"><a href="#">Placeholders</a></li>
           </ul>
+          <!--
           <ul class="nav nav-sidebar">
             <li><a href="">Nav item</a></li>
             <li><a href="">Nav item again</a></li>
@@ -67,13 +69,17 @@
             <li><a href="">One more nav</a></li>
             <li><a href="">Another nav item</a></li>
           </ul>
+          -->
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Parramatta Dashboard</h1>
-          <div class="row placeholders">
+          <div id="content-overview" class="row placeholders">
             <div class="col-xs-7 col-sm-7">
 	        	<iframe width="600" height="420" src="http://maps.stamen.com/watercolor/embed#12/-33.7811/150.9913"></iframe>
             </div>
+	      </div>
+
+          <div id="content-rent" class="row placeholders">
             <div class="col-xs-5 col-sm-5">
             	<div>To view rental data for Parramatta, select a building type: </div>
             	<div style="">
@@ -86,7 +92,7 @@
             </div>
 	      </div>
 
-          <div class="row placeholders">
+          <div id="content-placeholders" class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>Label</h4>
@@ -109,19 +115,36 @@
             </div>
           </div>
 
+          <div id="content-profile">
+	          <h2 class="sub-header">Wikipedia information</h2>
+	          <div class="table-responsive">
+	            <table class="table table-striped">
+	              <thead>
+	                <tr>
+	                  <th>Field</th>
+	                  <th>Information</th>
+	                </tr>
+	              </thead>
+	              <tbody id="wiki-info-profile">
+	              </tbody>
+	            </table>
+	          </div>
+          </div>
 
-          <h2 class="sub-header">Wikipedia information</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Field</th>
-                  <th>Information</th>
-                </tr>
-              </thead>
-              <tbody id="city-info">
-              </tbody>
-            </table>
+          <div id="content-raw">
+	          <h2 class="sub-header">Wikipedia information</h2>
+	          <div class="table-responsive">
+	            <table class="table table-striped">
+	              <thead>
+	                <tr>
+	                  <th>Field</th>
+	                  <th>Information</th>
+	                </tr>
+	              </thead>
+	              <tbody id="wiki-info-raw">
+	              </tbody>
+	            </table>
+	          </div>
           </div>
         </div>
       </div>
@@ -130,5 +153,6 @@
     <!-- Custom JS -->
     <script type="text/javascript" language="javascript" src="js/rent.js"></script>
     <script type="text/javascript" language="javascript" src="js/semantic.js"></script>
+    <script type="text/javascript" language="javascript" src="js/nav.js"></script>
 </body>
 </html>

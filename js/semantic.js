@@ -51,7 +51,7 @@ var processResults = function(result, func) {
         });
         displayInfo(data);
         for (var key in data)
-            addInfo(key, data[key]);
+            addInfoRaw(key, data[key]);
 
     }
     else {
@@ -117,5 +117,9 @@ var displayInfo = function(data) {
 }
 
 var addInfo = function(key, value) {
-    $("#city-info").append("<tr><td>" + key+"</td><td>" + value + "</td></tr>");
+    $("#wiki-info-profile").append("<tr><td>" + key+"</td><td>" + value + "</td></tr>");
+}
+
+var addInfoRaw = function(key, value) {
+    $("#wiki-info-raw").append("<tr><td>" + key+"</td><td>" + value + "</td></tr>");
 }
