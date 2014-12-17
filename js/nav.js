@@ -12,6 +12,9 @@ $(document).ready(function() {
 });
 
 var doNav = function(e, ui) {
-	//_.values(components).forEach(function(c) { console.log(c); $(c).hide(); } )
-	window.location.hash = $(components[e.currentTarget.id]);
+	var offset = $(components[e.currentTarget.id]).position().top - 30;
+	$('html, body').animate({
+            scrollTop: offset + 'px'
+    }, 'fast');
+	console.log(offset)
 };
