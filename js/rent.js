@@ -35,10 +35,7 @@ function parseCSV(location) {
             console.log("Remote file parsed!", results);
             
             // Determine categories
-            var categories = [];
-            for(var i=1; i < results.data.length; i++) {
-                categories.push(results.data[i][0]);
-            }
+            var categories = _.chain(results.data).map(function(row) { return row[0]; } ).rest(1).value();
             console.log("Categories:", categories);
             
             // Determine series
